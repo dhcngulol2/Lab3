@@ -1,0 +1,39 @@
+package BaiTH3task2;
+
+import java.util.List;
+
+public class OrderTest {
+	public static void main(String[] args) {
+		Product p1 = new Product("001","Chicken",10.2,"Good");
+		Product p2 = new Product("003","Duck",8.6,"Good");
+		Product p3 = new Product("004","pig",114.2,"Good");
+		Product p4 = new Product("002","Chicken",5.1,"Bad");
+		
+		OrderItem it1 = new OrderItem(p1, 2);
+		OrderItem it2 = new OrderItem(p2, 2);
+		OrderItem it3 = new OrderItem(p3, 2);
+		OrderItem it4 = new OrderItem(p4, 2);
+		
+		OrderItem[] oderList = new OrderItem[] {it1,it2,it3,it4};
+		
+        
+		Order order = new Order();
+		order.setItems(oderList);
+		double re = order.cost();
+		System.out.println(re);
+		//////////////////////
+		Product find = new Product("004","pig",114.2,"Good");
+		boolean compareProduct =order.contains(find);
+		if(compareProduct) {
+			System.out.println("Sản phẩm có trong danh sách");
+	    } else {
+	            System.out.println("Sản phẩm không có trong danh sách");
+        }
+		
+		
+		
+		
+		
+	}
+
+}
